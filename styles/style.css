@@ -294,23 +294,9 @@
     justify-self: end;
   }
 
-  .content-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content;
-  }
-
-  .causes .content-section-title {
-    display: block;
-  }
-
   .text-blocks {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
-  }
-
-  .causes .card {
-    grid-column: span 1;
   }
 }
 
