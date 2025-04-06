@@ -1,5 +1,297 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background-color: var(--page-background);
+  line-height: 23.4px;
+  /*padding: var(--main-gap);*/
+  block-size: 100vh;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.title {
+  font-size: var(--main-title-size);
+  color: var(--main-title-color);
+  font-weight: 700;
+}
+
+.header-title {
+  grid-row: 2;
+  text-shadow: 4px 4px 0 var(--accent-color,#FF0070);
+  line-height: 83%;
+  text-transform: lowercase;
+}
+
+.decorated-zone {
+  inline-size: 100%;
+  block-size: 100vh;
+  position: relative;
+  padding: var(--main-gap);
+}
+
+.rec {
+  display: block;
+  padding-inline-end: 10px;
+  text-transform: uppercase;
+  position: absolute;
+  inset-inline-end: calc(var(--main-gap) + 17px);
+  inset-block-start: calc(var(--main-gap) + 1px);
+  color: var(--accent-color);
+}
+
+.rec::after {
+  content: '';
+  display: block;
+  position: absolute;
+  inline-size: 9px;
+  block-size: 9px;
+  inset-inline-end: calc(var(--main-gap) - 18px);
+  inset-block-start: calc(var(--main-gap) - 2px);
+  border-radius: 50%;
+  background-color: var(--accent-color,#FF0070);
+  box-shadow: 0px 0px 4px 2px var(--acent-color, #FF0070);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid #FF0070;
+  border-inline-end: 1px solid #FF0070;
+  inset-inline-end: var(--main-gap); 
+  inset-block-start: var(--main-gap); 
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid #FF0070;
+  border-block-end: 1px solid #FF0070;
+  inset-block-end: var(--main-gap); 
+  inset-inline-start: var(--main-gap);
+}
+
+.header__theme-menu {
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.subtitle {
+  grid-row: 3;
+  align-self: center;
+  white-space: pre-line;
+}
+
+.title-decor {
+ background: var(--title-background);
+ font-weight: var(--title-font-weight);
+ line-height: 23.4px;
+ font-size: 18px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--button-color);
+  padding: 4px 13px; /*1px вместо 4px*/
+  text-transform: lowercase;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-border-color);
+}
+
+.content {
+  margin: var(--content-margin) 0 var(--content-margin); 
+  padding: 0 var(--main-gap) 0;
+  display: grid;
+  gap: var(--content-sections-gap);
+}
+
+.content-section {
+  display: grid;
+  gap: var(--content-section-title);
+}
+
+.content-section-title {
+  color: var(--card-title);
+  font-size: inherit;
+}
+
+.card-title {
+ margin-block-end:  var(--card-title-block-end);
+}
+
+.card-text {
+  color: var(--text-color);
+}
+
+.card-subtitle {
+  background-color: var(--card-title);
+  font-weight: 400;
+  margin: 20px 0 10px;
+}
+
+.advices {
+  display: grid;
+}
+
+.footer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.pictures .card-title {
+  margin-block-end: 0; 
+}
+
+.pictures {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.picture {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.card-text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color,#FF0070);
+}
+
+.card-text-link:hover {
+  text-decoration-line: 1px;
+}
+
+@media (width >= 768px) {
+
+  .subtitle {
+    inline-size: 364px;
+    justify-self: end;
+  }
+
+  .rec::after {
+    inset-inline-end: calc(var(--main-gap) - 25px);
+    inset-block-start: calc(var(--main-gap) - 12px);
+  }
+
+  .content {
+    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-areas:
+    "why" 
+    "causes"
+    "advices"
+    "pictures"
+  }
+
+  .why {
+    grid-area: why;
+  }
+
+  .causes {
+    grid-area: causes;
+  }
+
+  .advices {
+    grid-area: advices;
+  }
+
+  .pictures {
+    grid-area: pictures;
+  }
+
+  .content-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-section-title {
+    grid-column: 1; 
+  }
+
+  .why .card {
+    grid-column: 2 / -1;
+  }
+
+  .causes .card {
+    grid-column: 1 / -1;
+  }
+
+  .advices .card-list {
+    grid-column: 2 / -1;
+  }
+
+  .pictures .card-title {
+    grid-column: 1 / -1;
+  }
+
+  .picture:first-of-type {
+    grid-column: span 2;
+  }
+
+  .picture:nth-of-type(2) {
+    grid-row: span 2;
+  }
+
+  .picture:nth-of-type(3) {
+    grid-row: span 2;
+  }
+
+  .picture:nth-of-type(5) {
+    grid-column: span 2;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .header__theme-menu {
+    grid-row: 1;
+    align-self: start;
+    justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .subtitle {
+    inline-size: 491px;
+    justify-self: end;
+  }
+
+  .causes .card {
+    grid-row: 2;
+    grid-column: span 1;
+  }
+}
+
