@@ -1,20 +1,16 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   font-family: 'IBM Plex Mono', sans-serif;
   font-size: 18px;
   font-weight: 400;
   background-color: var(--page-background);
   line-height: 23.4px;
-  /*padding: var(--main-gap);*/
   block-size: 100vh;
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  color: var(--main-text-color);
 }
 
 .header {
@@ -26,13 +22,13 @@
   font-size: var(--main-title-size);
   color: var(--main-title-color);
   font-weight: 700;
+  text-transform: lowercase;
+  line-height: 83%;
 }
 
 .header-title {
   grid-row: 2;
   text-shadow: 4px 4px 0 var(--accent-color,#FF0070);
-  line-height: 83%;
-  text-transform: lowercase;
 }
 
 .decorated-zone {
@@ -141,7 +137,7 @@
 }
 
 .content-section-title {
-  color: var(--card-title);
+  color: var(--content-title-color);
   font-size: inherit;
 }
 
@@ -154,7 +150,7 @@
 }
 
 .card-subtitle {
-  background-color: var(--card-title);
+  background-color: var(--card-subtitle);
   font-weight: 400;
   margin: 20px 0 10px;
 }
@@ -167,6 +163,10 @@
   display: grid;
   justify-content: center;
   align-content: center;
+}
+
+.footer-title {
+  text-shadow: 2.5px 2.5px 0 #FF0070;
 }
 
 .pictures .card-title {
@@ -186,16 +186,45 @@
 
 .card-text-link {
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--accent-color,#FF0070);
+  text-shadow: 2px 2px 0 var(--accent-color, #FF0070);
 }
 
 .card-text-link:hover {
-  text-decoration-line: 1px;
+  border-bottom: 1px solid var(--link-color);
+}
+
+.card-text-link:focus {
+  outline: none;
+}
+
+.card-text-link:focus-visible {
+  outline: 1px solid var(--link-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .text-blocks {
   display: grid;
   gap: 20px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--button-color); 
 }
 
 @media (width >= 768px) {
@@ -211,7 +240,6 @@
   }
 
   .content {
-    /*grid-template-columns: repeat(3, 1fr);*/
     grid-template-areas:
     "why" 
     "causes"

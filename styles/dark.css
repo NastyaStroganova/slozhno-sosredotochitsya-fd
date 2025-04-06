@@ -1,16 +1,28 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
-}
+    --accent-color: #FF0070; 
+    --main-gap: 10px;
+    --main-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    --title-background: #FF0070;
+    --title-font-weight: 700;
+    --main-title-color: #DB00FF;
+    --button-color: #FF0070;
+    --button-border-color: #FF0070;
+    --page-background: #000028;
+    --background-image: url(../images/cover-image-dark.png);
+    --content-title-color: #FF0070;
+    --card-subtitle: #FF0070;
+    --content-margin: 40px;
+    --content-sections-gap: 50px;
+    --text-color: #F1B2CE;
+    --content-section-title: 20px;
+    --card-title-block-start: 20px;
+    --card-title-block-end: 10px;
+    --link-color: #F1B2CE;
+    --button-hover: #FF007066;
+    --main-text-color: #000028;
+  }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-}
+  .theme-dark .rec {
+    display: block;
+  }
+
