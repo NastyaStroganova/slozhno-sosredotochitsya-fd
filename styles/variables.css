@@ -3,7 +3,6 @@
   --main-gap: 10px;
   --main-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --title-background: #FF0070;
-  --title-font-weight: 700;
   --main-title-color: #DB00FF;
   --button-color: #FF0070;
   --button-border-color: #FF0070;
@@ -20,6 +19,7 @@
   --link-color: #F1B2CE;
   --button-hover: #FF007066;
   --main-text-color: #000028;
+  --menu-button-gap: 10px;
 }
 
 @media (width >= 768px) {
