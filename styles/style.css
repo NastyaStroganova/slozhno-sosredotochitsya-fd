@@ -120,10 +120,6 @@
   appearance: none;
 }
 
-.header__theme-menu-button_active {
-  border: 1px solid var(--button-border-color);
-}
-
 .content {
   margin: var(--content-margin) 0 var(--content-margin); 
   padding: 0 var(--main-gap) 0;
