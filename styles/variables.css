@@ -20,6 +20,7 @@
   --button-hover: #FF007066;
   --main-text-color: #000028;
   --menu-button-gap: 10px;
+  --decorated-zone-color: #FF0070;
 }
 
 @media (width >= 768px) {
