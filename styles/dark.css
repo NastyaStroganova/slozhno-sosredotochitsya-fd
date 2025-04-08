@@ -1,6 +1,6 @@
 :root.theme-dark {
-  --accent-color: #FF0070; 
-  --title-background: #FF0070;    
+  --accent-color: #FF0070;
+  --title-background: #FF0070;
   --main-title-color: #DB00FF;
   --button-color: #FF0070;
   --button-border-color: #FF0070;
@@ -18,4 +18,3 @@
 .theme-dark .rec {
   display: block;
 }
-

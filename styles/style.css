@@ -46,8 +46,8 @@
   padding-inline-end: 10px;
   text-transform: uppercase;
   position: absolute;
-  inset-inline-end: calc(var(--main-gap) + 17px);
-  inset-block-start: calc(var(--main-gap) + 1px);
+  inset-inline-end: calc(var(--main-gap) + 18px);
+  inset-block-start: var(--main-gap);
   color: var(--accent-color);
 }
 
@@ -71,8 +71,8 @@
   block-size: 25px;
   border-block-start: 1px solid var(--decorated-zone-color);
   border-inline-end: 1px solid var(--decorated-zone-color);
-  inset-inline-end: var(--main-gap); 
-  inset-block-start: var(--main-gap); 
+  inset-inline-end: var(--main-gap);
+  inset-block-start: var(--main-gap);
 }
 
 .decorated-zone::before {
@@ -82,7 +82,7 @@
   block-size: 25px;
   border-inline-start: 1px solid var(--decorated-zone-color);
   border-block-end: 1px solid var(--decorated-zone-color);
-  inset-block-end: var(--main-gap); 
+  inset-block-end: var(--main-gap);
   inset-inline-start: var(--main-gap);
 }
 
@@ -101,21 +101,20 @@
 .subtitle {
   grid-row: 3;
   align-self: center;
-  white-space: pre-line;
 }
 
 .title-decor {
- background: var(--title-background);
- font-weight: 700;
- line-height: 23.4px;
- font-size: 18px;
+  background: var(--title-background);
+  font-weight: 700;
+  line-height: 23.4px;
+  font-size: 18px;
 }
 
 .header__theme-menu-button {
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--button-color);
-  padding: 4px 13px;
+  padding: 3px 13px;
   text-transform: lowercase;
   line-height: 1;
   text-align: center;
@@ -124,7 +123,7 @@
 }
 
 .content {
-  margin: var(--content-margin) 0 var(--content-margin); 
+  margin: var(--content-margin) 0 var(--content-margin);
   padding: 0 var(--main-gap) 0;
   display: grid;
   gap: var(--content-sections-gap);
@@ -141,7 +140,7 @@
 }
 
 .card-title {
- margin-block-end:  var(--card-title-block-end);
+  margin-block-end: var(--card-title-block-end);
 }
 
 .card-text {
@@ -169,7 +168,7 @@
 }
 
 .pictures .card-title {
-  margin-block-end: 0; 
+  margin-block-end: 0;
 }
 
 .pictures {
@@ -223,10 +222,10 @@
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--button-color); 
+  border-bottom: 1px solid var(--button-color);
 }
 
-@media (width >= 768px) {
+@media (width >=768px) {
 
   .header-title {
     margin-inline-start: calc(var(--main-gap) * -1);
@@ -242,28 +241,7 @@
     inset-block-start: calc(var(--main-gap) - 12px);
   }
 
-  .content {
-    grid-template-areas:
-    "why" 
-    "causes"
-    "advices"
-    "pictures"
-  }
-
-  .why {
-    grid-area: why;
-  }
-
-  .causes {
-    grid-area: causes;
-  }
-
-  .advices {
-    grid-area: advices;
-  }
-
   .pictures {
-    grid-area: pictures;
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -273,7 +251,7 @@
   }
 
   .content-section-title {
-    grid-column: 1; 
+    grid-column: 1;
   }
 
   .why .card {
@@ -309,7 +287,7 @@
   }
 }
 
-@media (width >= 1024px) {
+@media (width >=1024px) {
 
   .header__theme-menu {
     grid-row: 1;
@@ -335,4 +313,3 @@
     grid-auto-rows: auto;
   }
 }
-
